@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:  sans-serif, ;
+    }
+  .contrainer{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(100, 100, 194);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }  
+  h2{
+    text-align: center;
+    color: white;
+  }
+  h3{
+    font-size: 15px;
+    margin-top: -15px;
+    color: greenyellow;
+    text-align: left;
+    text-shadow: 5px 5px 10px yellow;
+    cursor: pointer;
+  }
+  h3:hover{
+    color: orange;
+  }
+.calculator{
+    background-color: rgb(43, 41, 41);
+    padding: 20px;
+    border-radius: 10px;
+}
+.calculator form input{
+    border: 0;
+    outline: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(141, 207, 36);
+    background: black;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    transition: all .1s linear;
+}
+.calculator form input:hover{
+    background-color: orange;
+    color: black;
+}
+.display{
+display: flex;
+justify-content: flex-end;
+margin: 20px 0;
+}
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+form .display input:hover{
+    background-color: white;
+    color: black;
+}
+form div .equal{
+    width: 145px;
+}
+form input.oper{
+    color: aquamarine;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+  <div class="contrainer">
+<div class="calculator">
+<form >
+    <h2>The Calculator</h2>
+    <div class="display">
+        <input type="text" name="display">
+    </div>
+    <h3>Designed by: Usman</h3>
+    <div>
+        <input type="button" value="AC" onclick="display.value = ''" class="oper">
+        <input type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)" class="oper">
+        <input type="button" value="." onclick="display.value += '.'" class="oper">
+        <input type="button" value="/" onclick="display.value += '/'" class="oper">
+    </div>
+    <div>
+        <input type="button" value="7" onclick="display.value += '7'">
+        <input type="button" value="8" onclick="display.value += '8'">
+        <input type="button" value="9" onclick="display.value += '9'">
+        <input type="button" value="*" onclick="display.value += '*'" class="oper">
+    </div>
+    <div>
+        <input type="button" value="4" onclick="display.value += '4'">
+        <input type="button" value="5" onclick="display.value += '5'">
+        <input type="button" value="6" onclick="display.value += '6'">
+        <input type="button" value="-" onclick="display.value += '-'" class="oper">
+    </div>
+    <div>
+        <input type="button" value="1" onclick="display.value += '1'">
+        <input type="button" value="2" onclick="display.value += '2'">
+        <input type="button" value="3" onclick="display.value += '3'">
+        <input type="button" value="+" onclick="display.value += '+'" class="oper">
+    </div>
+    <div>
+        <input type="button" value="00" onclick="display.value += '00'">
+        <input type="button" value="0" onclick="display.value += '0'">
+        <input type="button" value="=" class="equal" onclick="display.value = eval(display.value)" class="oper">
+    </div>
+</form>
+
+</div>
+
+
+  </div>  
+</body>
+</html>
